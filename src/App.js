@@ -16,6 +16,7 @@ const TASKS = [
 ];
 
 const App = () => {
+  const [complete, setComplete] = useState(props.isComplete);
   return (
     <div className="App">
       <header className="App-header">
