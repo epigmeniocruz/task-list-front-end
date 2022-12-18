@@ -18,15 +18,14 @@ const TaskList = ({ tasks }) => {
   };
   return <ul className="tasks__list no-bullet">{getTaskListJSX(tasks)}</ul>;
 };
-
+// Update proptypes to require the new prop named onUpdateTask whose value is a reference to the function in App.
 TaskList.propTypes = {
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       isComplete: PropTypes.bool.isRequired,
-    })
-  ).isRequired,
-};
-
+    })),
+  updateTaskStatus: PropTypes.func.isRequired // this is entirely seperate 
+}
 export default TaskList;
